@@ -1,0 +1,493 @@
+#include<iostream>
+#include<conio.h>
+#include<string.h>
+#include<stdio.h>
+
+using namespace std;
+
+//Initializing structures.
+struct element{
+                 short atomicno;
+                 char name[50];
+                 char ec[50];
+                 short group;
+                 short period;
+                 char block;
+                 float atomicw;
+                 float en;
+
+              }elem[115];
+int main()
+{
+    int n,t,a,i;
+    char name[50],c;
+    //Displaying introduction.
+
+    cout<<"\n\n\n\n\n\n\n\n\n\n\n\t\tA PROGRAM ON PERIODIC TABLE BY VIBUDH" ;
+
+
+
+
+
+    //Displaying the modern periodic table.
+    cout<<"\n\t\t\tTHE MODERN PERIODIC TABLE\n";
+    cout<<"\t\t\t-------------------------\n";
+    cout<<"\tH                                                      He"<<"\n\n";
+    cout<<"\tLi Be                                 B  C   N  O   F  Ne"<<"\n\n";
+    cout<<"\tNa Mg                                 Al Si  P  S   Cl Ar"<<"\n\n";
+    cout<<"\tK  Ca Sc Ti V  Cr Mn Fe Co Ni Cu  Zn  Ga Ge  As Se  Br Kr"<<"\n\n";
+    cout<<"\tRb Sr Y  Zr Nb Mo Tc Ru Rh Pd Ag  Cd  In Sn  Sb Te  I  Xe"<<"\n\n";
+    cout<<"\tCs Ba La Hf Ta W  Re Os Ir Pt Au  Hg  Tl Pb  Bi Po  At Rn"<<"\n\n";
+    cout<<"\tFr Ra Ac Rf Db Sg Bh Hs Mt Ds Uuu Uub -  Uuq -  Uuh"<<"\n\n\n";
+    cout<<"\t\t Ce Pr Nd Pm Sm Eu Gd Tb Dy Ho Er Tm Yb Lu"<<"\n\n";
+    cout<<"\t\t Th Pa U  Np Pu Am Cm Bk Cf Es Fm Md No Lr"<<"\n\n\n";
+
+    //Initializing atomic numbers.
+    for(i=1;i<=114;++i)
+    {
+                    elem[i].atomicno=i;
+    }
+    //Initializing element names and electronic configurations.
+    {
+                    strcpy(elem[1].name,"Hydrogen-H");          strcpy(elem[1].ec,"1s1");
+                    strcpy(elem[2].name,"Helium-He");           strcpy(elem[2].ec,"1s2");
+                    strcpy(elem[3].name,"Lithium-Li");          strcpy(elem[3].ec,"[He] 2s1");
+                    strcpy(elem[4].name,"Beryllium-Be");        strcpy(elem[4].ec,"[He] 2s2	");
+                    strcpy(elem[5].name,"Boron-B");             strcpy(elem[5].ec,"[He] 2s2 2p1");
+                    strcpy(elem[6].name,"Carbon-C");            strcpy(elem[6].ec,"[He] 2s2 2p2");
+                    strcpy(elem[7].name,"Nitrogen-N");          strcpy(elem[7].ec,"[He] 2s2 2p3");
+                    strcpy(elem[8].name,"Oxygen-O");            strcpy(elem[8].ec,"[He] 2s2 2p4");
+                    strcpy(elem[9].name,"Fluorine-F");          strcpy(elem[9].ec,"[He] 2s2 2p5");
+                    strcpy(elem[10].name,"Neon-Ne");            strcpy(elem[10].ec,"[He] 2s2 2p6");
+                    strcpy(elem[11].name,"Sodium-Na");          strcpy(elem[11].ec,"[Ne] 3s1");
+                    strcpy(elem[12].name,"Magnesium-Mg");       strcpy(elem[12].ec,"[Ne] 3s2");
+                    strcpy(elem[13].name,"Aluminium-Al");       strcpy(elem[13].ec,"[Ne] 3s2 3p1");
+                    strcpy(elem[14].name,"Silicon-Si");         strcpy(elem[14].ec,"[Ne] 3s2 3p2");
+                    strcpy(elem[15].name,"Phosphorus-P");       strcpy(elem[15].ec,"[Ne] 3s2 3p3");
+                    strcpy(elem[16].name,"Sulfur-S");           strcpy(elem[16].ec,"[Ne] 3s2 3p4");
+                    strcpy(elem[17].name,"Chlorine-Cl");        strcpy(elem[17].ec,"[Ne] 3s2 3p5");
+                    strcpy(elem[18].name,"Argon-Ar");           strcpy(elem[18].ec,"[Ne] 3s2 3p6");
+                    strcpy(elem[19].name,"Potassium-K");        strcpy(elem[19].ec,"[Ar] 4s1");
+                    strcpy(elem[20].name,"Calcium-Ca");         strcpy(elem[20].ec,"[Ar] 4s2");
+                    strcpy(elem[21].name,"Scandium-Sc");        strcpy(elem[21].ec,"[Ar] 3d1 4s2");
+                    strcpy(elem[22].name,"Titanium-Ti");        strcpy(elem[22].ec,"[Ar] 3d2 4s2");
+                    strcpy(elem[23].name,"Vanadium-V");         strcpy(elem[23].ec,"[Ar] 3d3 4s2");
+                    strcpy(elem[24].name,"Chromium-Cr");        strcpy(elem[24].ec,"[Ar] 3d5 4s1");
+                    strcpy(elem[25].name,"Manganese-Mn");       strcpy(elem[25].ec,"[Ar] 3d5 4s2");
+                    strcpy(elem[26].name,"Iron-Fe");            strcpy(elem[26].ec,"[Ar] 3d6 4s2");
+                    strcpy(elem[27].name,"Cobalt-Co");          strcpy(elem[27].ec,"[Ar] 3d7 4s2");
+                    strcpy(elem[28].name,"Nickel-Ni");          strcpy(elem[28].ec,"[Ar] 3d8 4s2");
+                    strcpy(elem[29].name,"Copper-Cu");          strcpy(elem[29].ec,"[Ar] 3d10 4s1");
+                    strcpy(elem[30].name,"Zinc-Zn");            strcpy(elem[30].ec,"[Ar] 3d10 4s2");
+                    strcpy(elem[31].name,"Gallium-Ga");         strcpy(elem[31].ec,"[Ar] 3d10 4s2 4p1");
+                    strcpy(elem[32].name,"Germanium-Ge");       strcpy(elem[32].ec,"[Ar] 3d10 4s2 4p2");
+                    strcpy(elem[33].name,"Arsenic-As");         strcpy(elem[33].ec,"[Ar] 3d10 4s2 4p3");
+                    strcpy(elem[34].name,"Selenium-Se");        strcpy(elem[34].ec,"[Ar] 3d10 4s2 4p4");
+                    strcpy(elem[35].name,"Bromine-Br");         strcpy(elem[35].ec,"[Ar] 3d10 4s2 4p5	");
+                    strcpy(elem[36].name,"Krypton-Kr");         strcpy(elem[36].ec,"[Ar] 3d10 4s2 4p6	");
+                    strcpy(elem[37].name,"Rubidium-Rb");        strcpy(elem[37].ec,"[Kr] 5s1");
+                    strcpy(elem[38].name,"Strontium-Sr");       strcpy(elem[38].ec,"[Kr] 5s2");
+                    strcpy(elem[39].name,"Yttrium-Y");          strcpy(elem[39].ec,"[Kr] 4d1 5s2");
+                    strcpy(elem[40].name,"Zirconium-Zr");       strcpy(elem[40].ec,"[Kr] 4d2 5s2");
+                    strcpy(elem[41].name,"Niobium-Nb");         strcpy(elem[41].ec,"[Kr] 4d4 5s1");
+                    strcpy(elem[42].name,"Molybdenum-Mo");      strcpy(elem[42].ec,"[Kr] 4d5 5s1");
+                    strcpy(elem[43].name,"Technetium-Tc");      strcpy(elem[43].ec,"[Kr] 4d5 5s2");
+                    strcpy(elem[44].name,"Ruthenium-Ru");       strcpy(elem[44].ec,"[Kr] 4d7 5s1");
+                    strcpy(elem[45].name,"Rhodium-Rh");         strcpy(elem[45].ec,"[Kr] 4d8 5s1");
+                    strcpy(elem[46].name,"Palladium-Pd");       strcpy(elem[46].ec,"[Kr] 4d10");
+                    strcpy(elem[47].name,"Silver-Ag");          strcpy(elem[47].ec,"[Kr] 4d10 5s1");
+                    strcpy(elem[48].name,"Cadmium-Cd");         strcpy(elem[48].ec,"[Kr] 4d10 5s2");
+                    strcpy(elem[49].name,"Indium-In");          strcpy(elem[49].ec,"[Kr] 4d10 5s2 5p1");
+                    strcpy(elem[50].name,"Tin-Sn");             strcpy(elem[50].ec,"[Kr] 4d10 5s2 5p2");
+                    strcpy(elem[51].name,"Antimony-Sb");        strcpy(elem[51].ec,"[Kr] 4d10 5s2 5p3");
+                    strcpy(elem[52].name,"Tellurium-Te");       strcpy(elem[52].ec,"[Kr] 4d10 5s2 5p4");
+                    strcpy(elem[53].name,"Iodine-I");           strcpy(elem[53].ec,"[Kr] 4d10 5s2 5p5");
+                    strcpy(elem[54].name,"Xenon-Xe");           strcpy(elem[54].ec,"[Kr] 4d10 5s2 5p6");
+                    strcpy(elem[55].name,"Caesium-Cs");         strcpy(elem[55].ec,"[Xe] 6s1");
+                    strcpy(elem[56].name,"Barium-Ba");          strcpy(elem[56].ec,"[Xe] 6s2");
+                    strcpy(elem[57].name,"Lanthanum-La");       strcpy(elem[57].ec,"[Xe] 5d1 6s2");
+                    strcpy(elem[58].name,"Cerium-Ce");          strcpy(elem[58].ec,"[Xe] 4f1 5d1 6s2");
+                    strcpy(elem[59].name,"Praseodymium-Pr");    strcpy(elem[59].ec,"[Xe] 4f3 6s2");
+                    strcpy(elem[60].name,"Neodymium-Nd");       strcpy(elem[60].ec,"[Xe] 4f4 6s2");
+                    strcpy(elem[61].name,"Promethium-Pm");      strcpy(elem[61].ec,"[Xe] 4f5 6s2");
+                    strcpy(elem[62].name,"Samarium-Sm");        strcpy(elem[62].ec,"[Xe] 4f6 6s2");
+                    strcpy(elem[63].name,"Europium-Eu");        strcpy(elem[63].ec,"[Xe] 4f7 6s2");
+                    strcpy(elem[64].name,"Gadolinium-Gd");      strcpy(elem[64].ec,"[Xe] 4f7 5d1 6s2");
+                    strcpy(elem[65].name,"Terbium-Tb");         strcpy(elem[65].ec,"[Xe] 4f9 6s2");
+                    strcpy(elem[66].name,"Dysprosium-Dy");      strcpy(elem[66].ec,"[Xe] 4f10 6s2");
+                    strcpy(elem[67].name,"Holmium-Ho");         strcpy(elem[67].ec,"[Xe] 4f11 6s2");
+                    strcpy(elem[68].name,"Erbium-Er");          strcpy(elem[68].ec,"[Xe] 4f12 6s2");
+                    strcpy(elem[69].name,"Thulium-Tm");         strcpy(elem[69].ec,"[Xe] 4f13 6s2");
+                    strcpy(elem[70].name,"Ytterbium-Yb");       strcpy(elem[70].ec,"[Xe] 4f14 6s2");
+                    strcpy(elem[71].name,"Lutetium-Lu");        strcpy(elem[71].ec,"[Xe] 4f14 5d1 6s2");
+                    strcpy(elem[72].name,"Hafnium-Hf");         strcpy(elem[72].ec,"[Xe] 4f14 5d2 6s2");
+                    strcpy(elem[73].name,"Tantalum-Ta");        strcpy(elem[73].ec,"[Xe] 4f14 5d3 6s2");
+                    strcpy(elem[74].name,"Tungsten-W");         strcpy(elem[74].ec,"[Xe] 4f14 5d4 6s2");
+                    strcpy(elem[75].name,"Rhenium-Re");         strcpy(elem[75].ec,"[Xe] 4f14 5d5 6s2");
+                    strcpy(elem[76].name,"Osmium-Os");          strcpy(elem[76].ec,"[Xe] 4f14 5d6 6s2");
+                    strcpy(elem[77].name,"Iridium-Ir");         strcpy(elem[77].ec,"[Xe] 4f14 5d7 6s2");
+                    strcpy(elem[78].name,"Platinum-Pt");        strcpy(elem[78].ec,"[Xe] 4f14 5d9 6s1");
+                    strcpy(elem[79].name,"Gold-Au");            strcpy(elem[79].ec,"[Xe] 4f14 5d10 6s1");
+                    strcpy(elem[80].name,"Mercury-Hg");         strcpy(elem[80].ec,"[Xe] 4f14 5d10 6s2	");
+
+    }
+    //Initializing atomic weight, atomic radius and electronegativity.
+    {
+                   elem[1].atomicw=1.008;                      elem[1].en=2.20;
+                   elem[2].atomicw=4.002602;                  elem[2].en=0;
+                   elem[3].atomicw=6.94;                     elem[3].en=0.98;
+                   elem[4].atomicw=9.012182;                  elem[4].en=1.57;
+                   elem[5].atomicw=10.81;                     elem[5].en=2.04;
+                   elem[6].atomicw=12.011;                     elem[6].en=2.55;
+                   elem[7].atomicw=14.007;                     elem[7].en=3.04;
+                   elem[8].atomicw=15.999;                      elem[8].en=3.44;
+                   elem[9].atomicw=18.9984032;                  elem[9].en=3.98;
+                   elem[10].atomicw=20.1797;                   elem[10].en=0;
+                   elem[11].atomicw=22.98976928;              elem[11].en=0.93;
+                   elem[12].atomicw=24.305;                   elem[12].en=1.31;
+                   elem[13].atomicw=26.9815386;              elem[13].en=1.61;
+                   elem[14].atomicw=28.085;                   elem[14].en=1.90;
+                   elem[15].atomicw=30.973762;                 elem[15].en=2.19;
+                   elem[16].atomicw=32.06;                     elem[16].en=2.58;
+                   elem[17].atomicw=35.45;                     elem[17].en=3.16;
+                   elem[18].atomicw=39.948;                    elem[18].en=0;
+                   elem[19].atomicw=39.0983;                  elem[19].en=0.82;
+                   elem[20].atomicw=40.078;                   elem[20].en=1.00;
+                   elem[21].atomicw=44.955912;                elem[21].en=1.36;
+                   elem[22].atomicw=47.867;                   elem[22].en=1.54;
+                   elem[23].atomicw=50.9415;                  elem[23].en=1.63;
+                   elem[24].atomicw=51.9961;                  elem[24].en=1.66;
+                   elem[25].atomicw=54.938045;                elem[25].en=1.55;
+                   elem[26].atomicw=55.845;                   elem[26].en=1.83;
+                   elem[27].atomicw=58.933195;                elem[27].en=1.88;
+                   elem[28].atomicw=58.6934;                  elem[28].en=1.91;
+                   elem[29].atomicw=63.546;                   elem[29].en=1.90;
+                   elem[30].atomicw=65.38;                    elem[30].en=1.65;
+                   elem[31].atomicw=69.723;                   elem[31].en=1.81;
+                   elem[32].atomicw=72.630;                   elem[32].en=2.01;
+                   elem[33].atomicw=74.92160;                 elem[33].en=2.18;
+                   elem[34].atomicw=78.96;                    elem[34].en=2.55;
+                   elem[35].atomicw=79.904;                    elem[35].en=2.96;
+                   elem[36].atomicw=83.798;                    elem[36].en=3.00;
+                   elem[37].atomicw=85.4678;                  elem[37].en=0.82;
+                   elem[38].atomicw=87.62;                    elem[38].en=0.95;
+                   elem[39].atomicw=88.90585;                 elem[39].en=1.22;
+                   elem[40].atomicw=91.224;                   elem[40].en=1.33;
+                   elem[41].atomicw=92.90638;                 elem[41].en=1.6;
+                   elem[42].atomicw=95.96;                    elem[42].en=2.16;
+                   elem[43].atomicw=98;                       elem[43].en=1.9;
+                   elem[44].atomicw=101.07;                   elem[44].en=2.2;
+                   elem[45].atomicw=102.90550;                elem[45].en=2.28;
+                   elem[46].atomicw=106.42;                   elem[46].en=2.20;
+                   elem[47].atomicw=107.8682;                 elem[47].en=1.93;
+                   elem[48].atomicw=112.411;                  elem[48].en=1.69;
+                   elem[49].atomicw=114.818;                  elem[49].en=1.78;
+                   elem[50].atomicw=118.710;                  elem[50].en=1.96;
+                   elem[51].atomicw=121.760;                  elem[51].en=2.05;
+                   elem[52].atomicw=127.60;                  elem[52].en=2.1;
+                   elem[53].atomicw=126.90447;               elem[53].en=2.66;
+                   elem[54].atomicw=131.293;                  elem[54].en=2.6;
+                   elem[55].atomicw=132.9054519;              elem[55].en=0.79;
+                   elem[56].atomicw=137.327;                  elem[56].en=0.89;
+                   elem[57].atomicw=138.90547;                elem[57].en=1.10;
+                   elem[58].atomicw=140.90765;                elem[58].en=1.12;
+                   elem[59].atomicw=140.90765;                elem[59].en=1.13;
+                   elem[60].atomicw=144.242;                  elem[60].en=1.14;
+                   elem[61].atomicw=145;                      elem[61].en=0;
+                   elem[62].atomicw=150.36;                   elem[62].en=1.17;
+                   elem[63].atomicw=151.964;                  elem[63].en=0;
+                   elem[64].atomicw=157.25;                   elem[64].en=1.20;
+                   elem[65].atomicw=158.92535;                elem[65].en=0;
+                   elem[66].atomicw=162.500;                  elem[66].en=1.22;
+                   elem[67].atomicw=164.93032;                  elem[67].en=1.23;
+                   elem[68].atomicw=167.259;                  elem[68].en=1.24;
+                   elem[69].atomicw=168.93421;                elem[69].en=1.25;
+                   elem[70].atomicw=173.054;                  elem[70].en=0;
+                   elem[71].atomicw=174.9668;                 elem[71].en=1.27;
+                   elem[72].atomicw=178.49;                   elem[72].en=1.3;
+                   elem[73].atomicw=180.94788;                elem[73].en=1.5;
+                   elem[74].atomicw=183.84;                   elem[74].en=2.36;
+                   elem[75].atomicw=186.207;                  elem[75].en=1.9;
+                   elem[76].atomicw=190.23;                   elem[76].en=2.2;
+                   elem[77].atomicw=192.217;                  elem[77].en=2.20;
+                   elem[78].atomicw=195.084;                  elem[78].en=2.28;
+                   elem[79].atomicw=196.966569;               elem[79].en=2.54;
+                   elem[80].atomicw=200.592;                  elem[80].en=2.00;
+
+    }
+
+
+
+
+
+    //Initializing group number and block.
+    {
+                   for(i=1;i<=114;++i)
+                   {
+                                      if(i==1 || i==3 || i==11 || i==19 || i==37 || i==55 || i==87)
+                                      {
+                                           elem[i].group=1;
+                                           elem[i].block='s';
+                                      }
+                                      else if(i==4 || i==12 || i==20 || i==38 || i==56 || i==88)
+                                      {
+                                           elem[i].group=2;
+                                           elem[i].block='s';
+                                      }
+                                      else if(i==21 || i==39 || i==57 || i==89)
+                                      {
+                                           elem[i].group=3;
+                                           elem[i].block='d';
+                                      }
+                                      else if(i==22 || i==40 || i==72 || i==104)
+                                      {
+                                           elem[i].group=4;
+                                           elem[i].block='d';
+                                      }
+                                      else if(i==23 || i==41 || i==73 || i==105)
+                                      {
+                                           elem[i].group=5;
+                                           elem[i].block='d';
+                                      }
+                                      else if(i==24 || i==42 || i==74 || i==106)
+                                      {
+                                           elem[i].group=6;
+                                           elem[i].block='d';
+                                      }
+                                      else if(i==25 || i==43 || i==75 || i==107)
+                                      {
+                                           elem[i].group=7;
+                                           elem[i].block='d';
+                                      }
+                                      else if(i==26 || i==44 || i==76 || i==108)
+                                      {
+                                           elem[i].group=8;
+                                           elem[i].block='d';
+                                      }
+                                      else if(i==27 || i==45 || i==77 || i==109)
+                                      {
+                                           elem[i].group=9;
+                                           elem[i].block='d';
+                                      }
+                                      else if(i==28 || i==46 || i==78 || i==110)
+                                      {
+                                           elem[i].group=10;
+                                           elem[i].block='d';
+                                      }
+                                      else if(i==29 || i==47 || i==79 || i==111)
+                                      {
+                                           elem[i].group=11;
+                                           elem[i].block='d';
+                                      }
+                                      else if(i==30 || i==48 || i==80 || i==112)
+                                      {
+                                           elem[i].group=12;
+                                           elem[i].block='d';
+                                      }
+                                      else if(i==5 || i==13 || i==31 || i==49 || i==81 || i==113)
+                                      {
+                                           elem[i].group=13;
+                                           elem[i].block='p';
+                                      }
+                                      else if(i==6 || i==14 || i==32 || i==50 || i==82 || i==114)
+                                      {
+                                           elem[i].group=14;
+                                           elem[i].block='p';
+                                      }
+                                      else if(i==7 || i==15 || i==33 || i==51 || i==83 || i==115)
+                                      {
+                                           elem[i].group=15;
+                                           elem[i].block='p';
+                                      }
+                                      else if(i==8 || i==16 || i==34 || i==52 || i==84 || i==116)
+                                      {
+                                           elem[i].group=16;
+                                           elem[i].block='p';
+                                      }
+                                      else if(i==9 || i==17 || i==35 || i==53 || i==85 || i==117)
+                                      {
+                                           elem[i].group=17;
+                                           elem[i].block='p';
+                                      }
+                                      else if(i==2 || i==10 || i==18 || i==36 || i==54 || i==86 || i==118)
+                                      {
+                                           elem[i].group=18;
+                                           elem[i].block='p';
+                                      }
+
+                   }
+                   for(i=57;i<=71;++i)
+                   {
+                                      elem[i].block='f';
+                   }
+                   for(i=89;i<=103;++i)
+                   {
+                                       elem[i].block='f';
+                   }
+    }
+    //Initializing period number.
+    {
+                   for(i=1;i<=2;++i)
+                   {
+                                    elem[i].period=1;
+                   }
+                   for(i=3;i<=10;++i)
+                   {
+                                    elem[i].period=2;
+                   }
+                   for(i=11;i<=18;++i)
+                   {
+                                    elem[i].period=3;
+                   }
+                   for(i=19;i<=36;++i)
+                   {
+                                    elem[i].period=4;
+                   }
+                   for(i=37;i<=54;++i)
+                   {
+                                    elem[i].period=5;
+                   }
+                   for(i=55;i<=86;++i)
+                   {
+                                    elem[i].period=6;
+                   }
+                   for(i=87;i<=114;++i)
+                   {
+                                    elem[i].period=7;
+                   }
+    }
+    //User Interface coding.
+    do
+    {
+    first:
+    cout<<"\n\n\n\n\n\n\n\t\t\tWhat would you like to do?"<<"\n\n\n";
+    cout<<"\t1. Search for an element\t";
+    cout<<"2. View the Modern Periodic Table"<<"\n\n\n";
+    cout<<"\t\t\tEnter your option: ";
+    cin>>t;
+
+    if(t==1)
+    {
+    start:
+    cout<<"\n\n\n\n\n\n\n\t\tHow would you like to search for your element? "<<"\n\n\n";
+    cout<<"\t1. Entering the atomic number\t";
+    cout<<"2. Entering the element name"<<"\n\n\n";
+    cout<<"\t\t\tEnter your option: ";
+    cin>>n;
+
+    switch(n)
+    {
+              case 1: cout<<"\n\n\n\n\n\t\tEnter the atomic number of the element: ";
+                      one:
+                      cin>>a;
+                      for(i=1;i<=114;++i)
+                      {
+                         if(a==i)
+                         {
+                         cout<<"\n\a";
+                         cout<<"\t\t          Name             ";puts(elem[i].name);cout<<"\n";
+                         cout<<"\n";
+                         cout<<"\t\t       Atomic Number       "<<elem[i].atomicno<<"\n";
+                         cout<<"\t\t Electronic Configuration  ";puts(elem[i].ec);
+                         cout<<"\t\t         Group             "<<elem[i].group<<"\n";
+                         cout<<"\t\t         Period            "<<elem[i].period<<"\n";
+                         cout<<"\t\t         Block             "<<elem[i].block<<"\n";
+                         cout<<"\t\t      Atomic Weight        "<<elem[i].atomicw<<"\n";
+
+                         if(elem[i].en==0)
+                         {cout<<"\t\t    Electronegativity      "<<"Not Available"<<"\n";}
+                         else
+                         {cout<<"\t\t    Electronegativity      "<<elem[i].en<<" (Pauling Scale)"<<"\n";}
+
+                         goto end;
+                         }
+                      }
+                      cout<<"\n\t\t\t   Please try again";
+
+
+                      cout<<"\n\n\n\n\n\t\tEnter the atomic number of the element: ";
+                      goto one;
+                      break;
+              case 2: cout<<"\t   Enter the element name given by the following format: "<<"\n\n";
+                      cout<<"\t\t   \"Element Name\"-\"Element Symbol\""<<"\n\n";
+                      cout<<"\t\t   ";
+                      cin.getline(name,50);//Two cin statements to prevent keyboard buffer.
+                      two:
+                      cin.getline(name,50);
+                      for(i=1;i<=114;++i)
+                      {
+                         if(strcmp(name,elem[i].name)==0)
+                         {
+                         cout<<"\n\a";
+                         cout<<"\t\t           Name            ";puts(elem[i].name);cout<<"\n";
+                         cout<<"\n";
+                         cout<<"\t\t       Atomic Number       "<<elem[i].atomicno<<"\n";
+                         cout<<"\t\t Electronic Configuration  ";puts(elem[i].ec);
+                         cout<<"\t\t          Group            "<<elem[i].group<<"\n";
+                         cout<<"\t\t          Period           "<<elem[i].period<<"\n";
+                         cout<<"\t\t          Block            "<<elem[i].block<<"\n";
+                         cout<<"\t\t       Atomic Weight       "<<elem[i].atomicw<<"\n";
+
+                         if(elem[i].en==0)
+                         {cout<<"\t\t    Electronegativity      "<<"Not Available"<<"\n";}
+                         else
+                         {cout<<"\t\t    Electronegativity      "<<elem[i].en<<" (Pauling Scale)"<<"\n";}
+
+                         goto end;
+                         }
+                      }
+                      cout<<"\t\t\t   Please try again";
+
+
+                      cout<<"\t   Enter the element name given by the following format: "<<"\n\n";
+                      cout<<"\t\t   \"Element Name\"-\"Element Symbol\""<<"\n\n";
+                      cout<<"\t\t   ";
+                      goto two;
+                      break;
+             default: cout<<"\n\n\n\n\n\n\n\n\n\n\t\t\t\tWrong Option!";
+
+
+                      goto start;
+                      break;
+    }
+    }
+
+
+    else if(t==2)
+    {
+         cout<<"\n\t\t\tTHE MODERN PERIODIC TABLE\n";
+         cout<<"\t\t\t-------------------------\n";
+         cout<<"\tH                                                      He"<<"\n\n";
+         cout<<"\tLi Be                                 B  C   N  O   F  Ne"<<"\n\n";
+         cout<<"\tNa Mg                                 Al Si  P  S   Cl Ar"<<"\n\n";
+         cout<<"\tK  Ca Sc Ti V  Cr Mn Fe Co Ni Cu  Zn  Ga Ge  As Se  Br Kr"<<"\n\n";
+         cout<<"\tRb Sr Y  Zr Nb Mo Tc Ru Rh Pd Ag  Cd  In Sn  Sb Te  I  Xe"<<"\n\n";
+         cout<<"\tCs Ba La Hf Ta W  Re Os Ir Pt Au  Hg  Tl Pb  Bi Po  At Rn"<<"\n\n";
+         cout<<"\tFr Ra Ac Rf Db Sg Bh Hs Mt Ds Uuu Uub -  Uuq -  Uuh"<<"\n\n\n";
+         cout<<"\t\t Ce Pr Nd Pm Sm Eu Gd Tb Dy Ho Er Tm Yb Lu"<<"\n\n";
+         cout<<"\t\t Th Pa U  Np Pu Am Cm Bk Cf Es Fm Md No Lr"<<"\n\n\n";
+         goto end;
+    }
+    else
+    {
+        cout<<"\n\n\n\n\n\n\n\n\n\n\t\t\t\tWrong Option!";
+
+
+        goto first;
+    }
+
+    end:
+    cout<<"\n\n";
+
+    cout<<"\n\n\n\n\n\n\n\n\n\n\n\t\tWould you like to continue?(Y/N) ";
+    cin>>c;
+    if(c=='n' || c=='N')
+    {
+              exit(0);
+    }
+
+    }while(c=='y' || c=='Y');
+
+    getch();
+    return 0;
+}
